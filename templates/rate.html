@@ -8,10 +8,13 @@
     <center><img src = "{{photo}}" alt = "" /></center>
     <br /><br />
     <center>
-        {% for word in words %}
-            <button id = "{{word}}" name = "{{word}}" >{{word}}</button>
-        {% endfor %}
-        <br />
-        <button id = "skip" name = "skip" >(skip / broken photo)</button>
+        <form action = '/report' method = 'post' >
+            <input type = 'hidden' value = '{{legislator._id}}' />
+            {% for word in words %}
+                <button id = "{{word}}" name = "{{word}}" >{{word}}</button>
+            {% endfor %}
+            <br />
+            <button id = "skip" name = "skip" >(skip / broken photo)</button>
+        </form>
     </center>
 {% endblock %}
