@@ -4,9 +4,9 @@ from sunlight import openstates
 from legwords.core import db
 import sys
 
+state = sys.argv[1]
 
-
-legislators = openstates.legislators() # state=state)
+legislators = openstates.legislators(state=state)
 for legislator in legislators:
     leg = db.legislators.find_one({"_id": legislator['id']})
     if leg is None:
