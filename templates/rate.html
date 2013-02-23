@@ -9,12 +9,17 @@
     <br /><br />
     <center>
         <form action = '/report' method = 'post' >
-            <input type = 'hidden' value = '{{legislator._id}}' />
+            {# XXX: use url_for #}
+            <input
+                name = 'legid'
+                type = 'hidden'
+                value = '{{legislator._id}}' />
+
             {% for word in words %}
-                <button id = "{{word}}" name = "{{word}}" >{{word}}</button>
+                <button id = "{{word}}" name = "reaction" value = "{{word}}" >{{word}}</button>
             {% endfor %}
             <br />
-            <button id = "skip" name = "skip" >(skip / broken photo)</button>
+            <button id = "skip" name = "reaction" value = "skip" >(skip / broken photo)</button>
         </form>
     </center>
 {% endblock %}

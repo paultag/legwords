@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block title %}Whatchu' think?{% endblock %}
+
+{% block content %}
+    {% for word in words %}
+        <h1>{{word}}</h1>
+        {% for leg in results[word] %}
+            <img src = '{{leg|photo_url}}' alt = '' />
+        {% endfor %}
+        <br /><br />
+    {% endfor %}
+{% endblock %}
