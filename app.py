@@ -1,6 +1,7 @@
 # Copyright (c) Paul Tagliamonte <tag@pault.ag>, 2013
 
 from flask import Flask, render_template
+from legwords import WORDS
 from legwords.core import db
 from legwords.photos import create_photo_url
 import random
@@ -21,7 +22,8 @@ def rate():
     leg = legs[offset]
     return render_template("rate.html", **{
         "legislator": leg,
-        "photo": create_photo_url(leg['_id'])
+        "photo": create_photo_url(leg['_id']),
+        "words": WORDS,
     })
 
 

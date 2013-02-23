@@ -1,8 +1,8 @@
 
 
 WORDS = [
-    "friendly",
-    "scary",
-    "liberal",
-    "liberaervative",
+    "empathic",
+    "austere",
+    "narcissistic",
+    "altruistic",
 ]
