@@ -1,0 +1,30 @@
+#!/usr/bin/env python
+
+from sunlight import openstates
+from legwords.core import db
+import sys
+
+
+
+legislators = openstates.legislators() # state=state)
+for legislator in legislators:
+    leg = db.legislators.find_one({"_id": legislator['id']})
+    if leg is None:
+        print "Inserting {id}".format(**legislator)
+
+        if 'photo_url' in legislator:
+            if legislator['photo_url'] is None or legislator['photo_url'] == "":
+                print "Skipping... (Null)"
+                continue
+        else:
+            print "Skipping... (None)"
+            continue
+
+        db.legislators.insert({
+            "_id": legislator['id'],
+            "words": {},
+            "party": legislator['party'],
+            "state": legislator['state'],
+        }, safe=True)
+    else:
+        print "Skipping  {id}".format(**legislator)
