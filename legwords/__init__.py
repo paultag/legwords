@@ -1,8 +1,8 @@
 
 
 WORDS = [
-    "empathic",
-    "altruistic",
-    "cocky",
-    "reckless",
+    "elite",
+    "lonely",
+    "friendly",
+    "plain",
 ]
