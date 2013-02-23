@@ -2,7 +2,7 @@
 
 WORDS = [
     "empathic",
-    "austere",
-    "narcissistic",
     "altruistic",
+    "cocky",
+    "reckless",
 ]
